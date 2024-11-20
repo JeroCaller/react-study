@@ -4,6 +4,7 @@ import Display from './components/Display';
 import {useState} from 'react';
 import OwnCounter from './components/OwnCounter';
 import List from './components/List';
+import Parent from './components/Parent';
 
 function App() {
 
@@ -32,6 +33,9 @@ function App() {
       <OwnCounter></OwnCounter>
       <hr/>
       <List></List>
+      <hr/>
+
+      <Parent />
     </div>
   );
 }
