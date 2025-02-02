@@ -6,6 +6,7 @@ import MyPages from './pages/MyPages';
 import Main from './pages/Main';
 import AuthChecker from './pages/components/AuthChecker';
 import axios from 'axios';
+import FileUpload from './pages/FileUpload';
 
 /**
  * 파일 업로드 연습용 웹 사이트 구성하기
@@ -20,8 +21,6 @@ import axios from 'axios';
  * - 클릭 시 해당 파일 다운로드 받는 기능. 
  * 
  * TODO) 남은 일.
- * - 파일 삭제 기능.
- * - 파일 업로드 기능.
  * - 회원가입 기능
  * - 회원 탈퇴 기능 (탈퇴 시 해당 유저의 모든 이미지들도 삭제되도록)
  * 
@@ -44,6 +43,7 @@ function App() {
           <Route path="/login" element={<Login/>} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/mypage" element={<AuthChecker pageComponent={<MyPages />} />} />
+          <Route path="/upload" element={<AuthChecker pageComponent={<FileUpload />} />} />
         </Routes>
       </nav>
     </div>

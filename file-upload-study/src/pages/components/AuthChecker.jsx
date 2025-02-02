@@ -20,14 +20,14 @@ const AuthChecker = ({ pageComponent, pathIfNotAuth = "/login" }) => {
   const authDispatch = useDispatch();
 
   // 먼저 store에 저장된 로그인 정보가 있는지 가져온다. 
-  const authInfo = useSelector((state) => state.auth);
-  console.log(authInfo);
-  console.log(authInfo === null);
+  const authInfo = useSelector((state) => state.authReducer.auth);
+  //console.log(authInfo);
+  //console.log(authInfo === null);
 
   useEffect(() => {
-    console.log(authInfo);
+    //console.log(authInfo);
     if (authInfo && authInfo.loggedIn) return;
-    console.log("useEffect 내부 진입");
+    //console.log("useEffect 내부 진입");
     axios.get("http://localhost:8080/members")
     .then(response => {
       if (utils.isSuccessHttpStatusCode(response.status)) {
@@ -35,7 +35,7 @@ const AuthChecker = ({ pageComponent, pathIfNotAuth = "/login" }) => {
 
         // 현재 로그인한 사용자 정보를 redux store에 저장.
         const authNickname = responseData.nickname;
-        console.log(`authed nickname: ${authNickname}`);
+        //console.log(`authed nickname: ${authNickname}`);
         authDispatch({
           type: actionTypes.STORE_AUTH, 
           payload: {nickname: authNickname, loggedIn: true}

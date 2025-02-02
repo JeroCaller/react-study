@@ -1,7 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import * as utils from '../../utils/utils';
+import actionTypes from "../../redux/actions";
+
 import FileCard from "./fileSubComponents/FileCard";
 import FileCardContainer from "./fileSubComponents/FileCardContainer";
 
@@ -15,8 +18,11 @@ const FileList = ({ userInfo }) => {
 
 	const [fileInfoList, setFileInfoList] = useState([]);
 	const [isAuthError, setIsAuthError] = useState(false);
+	const isFileChanged = useSelector((state) => state.fileChangeReducer.isFileChanged);
+	console.log("isFileChanged : " + isFileChanged);
+	const fileDispath = useDispatch();
 
-	useEffect(() => {
+	const readFileFromServer = () => {
 		axios.get("http://localhost:8080/files")
 			.then(response => {
 				if (utils.isSuccessHttpStatusCode(response.status)) {
@@ -37,7 +43,19 @@ const FileList = ({ userInfo }) => {
 						console.log(error);
 				}
 			});
+	};
+
+	useEffect(() => {
+		readFileFromServer();
 	}, []);
+
+	if (isFileChanged) {
+		readFileFromServer();
+		fileDispath({
+			type: actionTypes.FILE_CHANGED,
+			payload: { isFileChanged: false }
+		});
+	}
 
 	if (userInfo == null || !userInfo.loggedIn || isAuthError) {
 		return (

@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 
 import PageHeader from "./components/PageHeader";
 import FileList from "./components/FileList";
+import { Link } from "react-router-dom";
 
 /**
  * 현재 로그인한 사용자만의 개인 공간 페이지.
@@ -12,11 +12,12 @@ import FileList from "./components/FileList";
  */
 const MyPages = () => {
 
-  const authInfo = useSelector((state) => state.auth);
+  const authInfo = useSelector((state) => state.authReducer.auth);
 	
   return (
   	<div className="page-container">
       <PageHeader userInfo={authInfo} />
+      <p><Link to="/upload">파일 업로드하기</Link></p>
       <FileList userInfo={authInfo} />
   	</div>
   );
