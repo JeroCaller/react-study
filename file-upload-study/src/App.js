@@ -21,7 +21,7 @@ import FileUpload from './pages/FileUpload';
  * - 클릭 시 해당 파일 다운로드 받는 기능. 
  * 
  * TODO) 남은 일.
- * - 회원가입 기능
+ * - 회원 정보 수정 기능
  * - 회원 탈퇴 기능 (탈퇴 시 해당 유저의 모든 이미지들도 삭제되도록)
  * 
  * @returns 
