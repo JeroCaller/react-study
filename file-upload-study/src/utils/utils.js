@@ -41,6 +41,16 @@ const isEmptyObject = (target) => {
   return Object.keys(target).length === 0 && target.constructor === Object;
 }
 
+/**
+ * axios.catch() 에서 사용할 기본 에러 처리 함수.
+ * 
+ * @param {*} error 
+ */
+const defaultAxiosErrorHandler = (error) => {
+  console.log("예상치 못한 에러 발생");
+  console.log(error);
+}
+
 const httpStatusMessages = {
   OK: 200,
   CREATED: 201,
@@ -57,5 +67,6 @@ export {
   extractJsonFromFormData, 
   isSuccessHttpStatusCode,
   isEmptyObject,
+  defaultAxiosErrorHandler,
   httpStatusMessages
 };

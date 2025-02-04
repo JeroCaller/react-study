@@ -15,6 +15,9 @@ const PageHeader = ({ userInfo }) => {
           <li>
             <Link to="/">메인 페이지로 가기</Link>
           </li>
+          <li>
+            <Link to="/profile" >회원 정보</Link>
+          </li>
         </ul>
         <p className="user-display">
           안녕하세요,{" "}

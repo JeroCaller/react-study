@@ -7,6 +7,7 @@ import Main from './pages/Main';
 import AuthChecker from './pages/components/AuthChecker';
 import axios from 'axios';
 import FileUpload from './pages/FileUpload';
+import Profile from './pages/Profile';
 
 /**
  * 파일 업로드 연습용 웹 사이트 구성하기
@@ -44,6 +45,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/mypage" element={<AuthChecker pageComponent={<MyPages />} />} />
           <Route path="/upload" element={<AuthChecker pageComponent={<FileUpload />} />} />
+          <Route path="/profile" element={<AuthChecker pageComponent={<Profile />} />} />
         </Routes>
       </nav>
     </div>
