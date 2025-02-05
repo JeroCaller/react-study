@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 import * as utils from '../../utils/utils';
 
-// TODO - 회원 탈퇴 기능 테스트하기.
 /**
  * 회원 설정 관련 위험 영역. 
  * 여기서는 회원 탈퇴 기능만 구현. 

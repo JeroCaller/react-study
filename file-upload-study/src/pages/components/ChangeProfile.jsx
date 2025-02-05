@@ -6,7 +6,6 @@ import axios from "axios";
 import * as utils from '../../utils/utils';
 import actionTypes from "../../redux/actions";
 
-// TODO - 회원 정보 수정 테스트하기.
 /**
  * 회원 정보 수정 화면.
  * 
