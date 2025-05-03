@@ -1,0 +1,14 @@
+.no-redux-page {
+  padding: 1em;
+}
+
+.no-redux-box {
+  border: 1px solid black;
+  padding: 1em;
+  margin: 1em;
+}
+
+.left-right {
+  display: flex;
+  justify-content: space-around;
+}

@@ -1,0 +1,7 @@
+.box {
+  border: 1px solid black;
+}
+
+.todo-item input[type='text'] {
+  width: 20em;
+}
