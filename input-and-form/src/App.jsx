@@ -3,6 +3,7 @@ import RouterSet from './components/RouterSet';
 import SideBar from './components/Sidebar';
 import ControlledCompEx from './pages/ControlledCompEx';
 import FormDataEx from './pages/FormDataEx';
+import InputValueEx from './pages/InputValueEx';
 import MainPage from './pages/MainPage';
 import UnControlledCompEx from './pages/UnControlledCompEx';
 
@@ -38,6 +39,11 @@ const App = () => {
       title: "FormData Ex",
       uriPath: "ex/form-data",
       element: <FormDataEx />
+    },
+    {
+      title: "input-value ex",
+      uriPath: "ex/input-value",
+      element: <InputValueEx />
     },
   ];
 
