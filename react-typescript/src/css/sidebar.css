@@ -1,0 +1,31 @@
+.sidebar {
+  border: 1px solid black;
+  padding: 1em;
+  margin: 1em;
+  text-align: center;
+}
+
+.sidebar .active {
+  background-color: cadetblue;
+  color: white;
+  font-weight: bold;
+  padding: 0.3em;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0em;
+}
+
+.sidebar ul li {
+  padding: 1em;
+  border: 1px solid black;
+  margin-bottom: 1em;
+  width: 10em;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: black;
+  width: 100%;
+}
